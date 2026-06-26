@@ -12,7 +12,7 @@ router.route('/me').get(isAuthenticatedUser ,getMyDetails)
 router.route('/update-password').patch(isAuthenticatedUser ,updatePassword)
 router.route('/me/update').patch(isAuthenticatedUser ,updateProfile)
 router.route('/admin/users').get(isAuthenticatedUser,authorizeRoles("admin"),getAllusers)
-router.route('/admin/user/:id').get(isAuthenticatedUser,authorizeRoles("admin"),getSingleUser).delete(isAuthenticatedUser,authorizeRoles("admin"),deleteProfile).patch(isAuthenticatedUser,authorizeRoles("admin"),updateRoles)
+router.route('/admin/user/:id').get(isAuthenticatedUser,authorizeRoles("admin"),getSingleUser).delete(isAuthenticatedUser,authorizeRoles("admin"),deleteProfile).put(isAuthenticatedUser,authorizeRoles("admin"),updateRoles)
 
 
 
